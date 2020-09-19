@@ -8,6 +8,7 @@
 require 'rest-client'
 User.destroy_all
 Movie.destroy_all
+Favorite.destroy_all
 
 #------------------------ MOVIES -------------------------
 
@@ -106,6 +107,8 @@ m4arr.each do |movie|
 end
 
 User.create(username: "Alex", email:"alexduterte@gmail.com", password: "pass")
+
+Favorite.create(user: User.first, movie: Movie.first)
 
 # t.string "email"
 # t.string "username"

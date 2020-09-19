@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
         user = User.find(params[:id])
         if user 
-            render json: user.as_json(include: [:movies], except: [:created_at, :updated_at])
+            render json: user.as_json(include: [:movies, :favorites], except: [:created_at, :updated_at])
         else
             render json: {error_message:  'User not found'}
         end
